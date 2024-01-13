@@ -1,7 +1,64 @@
 import { IoMdMenu } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
+    const navLinks = (
+        <>
+          <li className='font-semibold'>
+            <NavLink
+              to='/'
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-white font-semibold bg-[#978CD0]"
+                  : ""
+              }>
+              Profile
+            </NavLink>
+          </li>
+          <li className='font-semibold'>
+            <NavLink
+              to='/addProducts'
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-white font-semibold bg-[#978CD0]"
+                  : ""
+              }>
+              Report
+            </NavLink>
+          </li>
+          <li className='font-semibold'>
+            <NavLink
+              to='/cart'
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-white font-semibold bg-[#978CD0]"
+                  : ""
+              }>
+              Syllabus
+            </NavLink>
+          </li>
+          <li className='font-semibold'>
+            <NavLink
+              to='/sponsor'
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-white font-semibold bg-[#978CD0]"
+                  : ""
+              }>
+             Unit Test
+            </NavLink>
+          </li>
+        </>
+      );
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -10,9 +67,7 @@ const Navbar = () => {
             <IoMdMenu className='h-5 w-5'/>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Homepage</a></li>
-              <li><a>Portfolio</a></li>
-              <li><a>About</a></li>
+           {navLinks}
             </ul>
           </div>
         </div>
